@@ -6,11 +6,11 @@
 #==============================================================================
 # How to:
 # Right before a Teleport-Call insert a script with the following text:
-# IMNC::NEWNAME = "New Mapname"
+# IMNC::NEW_NAME = "New Mapname"
 # 
 # In the event contents list is should look like this:
 #
-# Script: IMNC::NEWNAME = "New Mapname"
+# Script: IMNC::NEW_NAME = "New Mapname"
 # Control Switches: [0001:Mapname_Switch] = ON
 # Transfer Player:[001:MAP001] (001,001)
 # Control Switches: [0001:Mapname_Switch] = OFF
@@ -31,7 +31,7 @@ class Window_MapName < Window_Base
       if $game_switches[IMNC::SID] == false
         draw_text(contents.rect, $game_map.display_name, 1)
       else
-        draw_text(contents.rect, IMNC::NEWNAME, 1)
+        draw_text(contents.rect, IMNC::NEW_NAME, 1)
       end
     end
   end
