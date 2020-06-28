@@ -4,7 +4,7 @@
 #    Author: modern algebra (rmrk.net)
 #    Date: 20 July 2013
 #    Fixed by Evil95 (Line 553)
-#     - Now the Border is shwon correctly over the Face-Picture.
+#     - Now the Border is shown correctly over the Face-Picture.
 #++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 #  Description:
 #    
