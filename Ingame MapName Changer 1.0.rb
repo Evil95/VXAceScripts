@@ -4,11 +4,14 @@
 # Version 1.0 (28.06.2020)
 # Von Evil95
 #==============================================================================
-# How to:
+# IMPORTANT: 
+# Not compatible with Yanflys Ace Save Engine. Original Mapname is still shown.
+# -----------------------------------------------------------------------------
+# HOW TO:
 # Right before a Teleport-Call insert a script with the following text:
 # IMNC::NEW_NAME = "New Mapname"
 # 
-# In the event contents list is should look like this:
+# In the event contents list it should look like this:
 #
 # Script: IMNC::NEW_NAME = "New Mapname"
 # Control Switches: [0001:Mapname_Switch] = ON
@@ -18,9 +21,9 @@
 #==============================================================================
 module IMNC
   # Switch ID to turn the new Mapname on and off
-  SID = 1
+  SID = 170
   # alternative name
-  NEWNAME = ""
+  NEW_NAME = ""
 end
 
 class Window_MapName < Window_Base
