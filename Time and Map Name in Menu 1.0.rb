@@ -1,9 +1,20 @@
 #==============================================================================
 # Time and Mapname in Menu
-# ----------------------------------------------------------------------------
-# Version 1.0 (14.06.2020)
+# -----------------------------------------------------------------------------
+# Version 1.1 (09.11.2022)
 # Von Evil95
 #==============================================================================
+#
+#-----------------------------------------------------------------------------
+# Changelog:
+#
+# Version 1.0
+#  - Initial Release
+# Version 1.1
+#  - added Time and Location text
+#
+#==============================================================================
+ 
 class Scene_Menu
  alias :time_create :create_gold_window
     def create_gold_window
@@ -22,24 +33,30 @@ end
 
 class Window_Mapname < Window_Base
   def initialize(x, y)
-    super(0, 192, 160, 50)
+    super(0, 192, 160, 60)
     refresh
   end  
   def refresh
     self.contents.clear
+    self.contents.font.color = system_color
+    self.contents.font.size = 12
+    self.contents.draw_text(0, -13, 120, 36, "Standort")
     self.contents.font.color = normal_color
     self.contents.font.size = 20
-    self.contents.draw_text(4, -3, 130, 32, $game_map.display_name, 1)
+    self.contents.draw_text(0, 0, 135, 45, $game_map.display_name, 1)
   end
 end
 
 class Window_Time < Window_Base
   def initialize(x, y)
-    super(0, 242, 160, 50)
+    super(0, 252, 160, 60)
     refresh
   end
   def refresh
     self.contents.clear
+    self.contents.font.color = system_color
+    self.contents.font.size = 12
+    self.contents.draw_text(0, -13, 120, 36, "Spielzeit")
     @total_sec = Graphics.frame_count / Graphics.frame_rate
     hour = @total_sec / 60 / 60
     min = @total_sec / 60 % 60
@@ -47,7 +64,7 @@ class Window_Time < Window_Base
     text = sprintf("%02d:%02d:%02d", hour, min, sec)
     self.contents.font.color = normal_color
     self.contents.font.size = 20
-    self.contents.draw_text(9, -3, 120, 32, text, 1)
+    self.contents.draw_text(0, 0, 130, 45, text, 1)
   end
   def update
     super
